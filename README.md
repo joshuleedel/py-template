@@ -1,2 +1,1 @@
-# py-template
-Python project template
+# Python project template
