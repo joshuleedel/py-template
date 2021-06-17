@@ -1,6 +1,7 @@
 PYTHON = python3
+SRC = src
 
-.PHONY: all clean docs lint test typecheck
+.PHONY: all clean docs lint test typecheck scan
 
 clean:
 	rm -rf dist build docs/build *.egg-info
@@ -19,3 +20,6 @@ test:
 typecheck:
 	$(PYTHON) -m mypy
 	$(PYTHON) -m pytype
+
+scan:
+	$(PYTHON) -m bandit -f yaml -r $(SRC)
